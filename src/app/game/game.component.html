@@ -1,0 +1,7 @@
+<div class="game-container">
+    <div class="card-stack-container">
+        @for (card of [0,1,2,3,4]; track $index) {
+        <img [ngStyle]="{'right.px': card*5}" src="./../../assets/img/cards_old/card_cover.png" alt="card cover png">
+        }
+    </div>
+</div>
