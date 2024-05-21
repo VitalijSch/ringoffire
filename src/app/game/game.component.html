@@ -1,7 +1,13 @@
 <div class="game-container">
     <div class="card-stack-container">
-        @for (card of [0,1,2,3,4]; track $index) {
-        <img [ngStyle]="{'right.px': card*5}" src="./../../assets/img/cards_old/card_cover.png" alt="card cover png">
+        @for (card of [0,1,2,3]; track $index) {
+        <img [ngStyle]="{'right.px': $index*3}" src="./../../assets/img/cards_old/card_cover.png" alt="card cover png">
+        <img (click)="takeCard()" class="top-card" style="right: 12px;"
+            src="./../../assets/img/cards/purple_back.png" alt="card cover png">
+        @if (pickCardAnimation) {
+        <img (click)="takeCard()" class="pick-card" style="right: 12px;"
+            src="./../../assets/img/cards/{{ currentCard }}.png" alt="card spade png">
+        }
         }
     </div>
 </div>
